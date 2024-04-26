@@ -1,10 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using Photon.Pun;
 using System;
-using TMPro;
+
 public class MyPlayer : MonoBehaviourPun,IPunObservable {
 
     public PhotonView pv;
@@ -18,25 +17,14 @@ public class MyPlayer : MonoBehaviourPun,IPunObservable {
     public GameObject playerCamera;
 
     public SpriteRenderer sr;
-    public TMP_Text nameText;
-    private Rigidbody2D rb;
-    private bool IsGrounded;
     void Start()
     {
-        PhotonNetwork.SendRate = 20;
-        PhotonNetwork.SerializationRate = 15;
         if (photonView.IsMine)
         {
-            nameText.text = PhotonNetwork.NickName;
-
-            rb = GetComponent<Rigidbody2D>();
             sceneCamera = GameObject.Find("Main Camera");
 
             sceneCamera.SetActive(false);
             playerCamera.SetActive(true);
-        }
-        else {
-            nameText.text = pv.Owner.NickName;
         }
     }
     void Update()
@@ -71,11 +59,6 @@ public class MyPlayer : MonoBehaviourPun,IPunObservable {
             pv.RPC("OnDirectionChange_LEFT", RpcTarget.Others);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded)
-        {
-             Jump();
-        }
-
     }
 
     [PunRPC]
@@ -90,33 +73,6 @@ public class MyPlayer : MonoBehaviourPun,IPunObservable {
     {
         sr.flipX = false;
 
-    }
-
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        if (photonView.IsMine)
-        { 
-            if (col.gameObject.tag == "Ground")
-            {
-                IsGrounded = true;
-            }
-        }
-    }
-
-    void OnCollisionExit2D(Collision2D col)
-    {
-        if (photonView.IsMine)
-        {
-            if (col.gameObject.tag == "Ground")
-            {
-                IsGrounded = false;
-            }
-        }
-    }
-
-    void Jump()
-    {
-        rb.AddForce(Vector2.up * jumpforce);
     }
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
