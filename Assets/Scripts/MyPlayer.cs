@@ -29,10 +29,10 @@ public class MyPlayer : MonoBehaviourPun,IPunObservable {
             nameText.text = PhotonNetwork.NickName;
 
             rb = GetComponent<Rigidbody2D>();
-            sceneCamera = GameObject.Find("Main Camera");
+            //sceneCamera = GameObject.Find("Main Camera");
 
-            sceneCamera.SetActive(false);
-            playerCamera.SetActive(true);
+            //sceneCamera.SetActive(false);
+            //playerCamera.SetActive(true);
         }
         else {
             nameText.text = pv.Owner.NickName;
