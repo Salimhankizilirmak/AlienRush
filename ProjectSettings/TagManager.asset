@@ -8,6 +8,7 @@ TagManager:
   - Play
   - Alien
   - SpaceShip
+  - Manager
   layers:
   - Default
   - TransparentFX

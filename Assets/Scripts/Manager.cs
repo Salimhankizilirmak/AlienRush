@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
@@ -15,4 +15,5 @@ public class Manager : MonoBehaviourPun {
     {
         PhotonNetwork.Instantiate(playerPrefab.name, playerPrefab.transform.position,playerPrefab.transform.rotation);
     }
+    
 }
