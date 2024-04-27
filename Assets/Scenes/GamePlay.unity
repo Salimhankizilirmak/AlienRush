@@ -3632,7 +3632,7 @@ GameObject:
   - component: {fileID: 475619481}
   m_Layer: 0
   m_Name: background_layer_20
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3995,8 +3995,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 50.008892, y: 3.5090132, z: 0.2}
-  m_Center: {x: 0, y: -13.455662, z: 0}
+  m_Size: {x: 449.58795, y: 2.1674194, z: 0.2}
+  m_Center: {x: 4.8748474, y: -14.126459, z: 0}
 --- !u!1 &510274635
 GameObject:
   m_ObjectHideFlags: 0
@@ -12308,7 +12308,7 @@ GameObject:
   - component: {fileID: 1725138567}
   m_Layer: 0
   m_Name: Forest
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13959,7 +13959,7 @@ GameObject:
   - component: {fileID: 2012438913}
   m_Layer: 0
   m_Name: background_layer_15
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14350,7 +14350,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 14.120782, y: -0.8572398}
+  m_Offset: {x: 34.929436, y: -0.8572398}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -14361,7 +14361,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 31.761564, y: 0.20552051}
+  m_Size: {x: 73.37886, y: 0.20552051}
   m_EdgeRadius: 0
 --- !u!1 &2050803097
 GameObject:
