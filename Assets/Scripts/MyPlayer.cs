@@ -32,9 +32,8 @@ public class MyPlayer : MonoBehaviourPun,IPunObservable {
             nameText.text = PhotonNetwork.NickName;
 
             rb = GetComponent<Rigidbody2D>();
-            //sceneCamera = GameObject.Find("Main Camera");
-
-            //sceneCamera.SetActive(false);
+            sceneCamera = GameObject.FindWithTag("MainCamera");
+            sceneCamera.SetActive(false);
             playerCamera.SetActive(true);
         }
         else {

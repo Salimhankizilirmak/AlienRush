@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-public class Manager : MonoBehaviour {
+public class Manager : MonoBehaviourPun {
     public GameObject playerPrefab;
 	void Start ()
     {
