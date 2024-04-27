@@ -32,7 +32,7 @@ public class MyPlayer : MonoBehaviourPun,IPunObservable {
             //sceneCamera = GameObject.Find("Main Camera");
 
             //sceneCamera.SetActive(false);
-            //playerCamera.SetActive(true);
+            playerCamera.SetActive(true);
         }
         else {
             nameText.text = pv.Owner.NickName;
