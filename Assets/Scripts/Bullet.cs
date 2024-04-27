@@ -6,7 +6,8 @@ using Photon.Pun;
 public class Bullet : MonoBehaviourPun
 {
     public float speed = 10f;
-    public float destroyTime = 0f;
+    public float destroyTime = 0.5f;
+   public float destroyAlienTime = 0.01f;
     public bool shootLeft = false;
      private GameObject Alien;
     Collider2D collision;
@@ -15,8 +16,15 @@ public class Bullet : MonoBehaviourPun
         this.GetComponent<PhotonView>().RPC("destroy",RpcTarget.AllBuffered);
         
     }
+    /*IEnumerator Alienn(){
+        this.GetComponent<PhotonView>().RPC("destroyAlien",RpcTarget.AllBuffered);
+        yield return new WaitForSeconds(destroyAlienTime);
+    }*/
 void Start(){
-        Alien = GameObject.FindGameObjectWithTag("Alien");
+       // Alien = GameObject.FindWithTag("Alien");
+        StartCoroutine(destroyBullet());
+       
+        
     }
     // Update is called once per frame
     void Update()
@@ -35,19 +43,13 @@ void Start(){
         Destroy(this.gameObject);
        
     }
-    [PunRPC]
-    public void OnTriggerEnter2D(Collider2D collision)
+    /*[PunRPC]
+    public void destroyAlien()
     {
-        if(collision.tag == "Alien"){
-            Destroy(this.gameObject);
-            Destroy(Alien.gameObject);
-        }
+        Destroy(this.gameObject);
         
-    }
-    
+    }*/
                
-         
-            
            
     [PunRPC]
     public void changeDirection(){

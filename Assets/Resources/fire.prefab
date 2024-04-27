@@ -127,6 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   destroyTime: 2
+  destroyAlienTime: 0.01
   shootLeft: 1
 --- !u!114 &495611049888591419
 MonoBehaviour:

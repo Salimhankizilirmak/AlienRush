@@ -10784,6 +10784,7 @@ GameObject:
   - component: {fileID: 4246405066517391931}
   - component: {fileID: 5490163148336498871}
   - component: {fileID: 9066927721041460761}
+  - component: {fileID: 2331179335713611409}
   m_Layer: 6
   m_Name: MonD_01
   m_TagString: Alien
@@ -10897,7 +10898,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -10919,6 +10920,28 @@ CapsuleCollider2D:
   m_Offset: {x: -1.2849699, y: 4.0358825}
   m_Size: {x: 6.3999724, y: 8.42024}
   m_Direction: 0
+--- !u!114 &2331179335713611409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6581948447166754671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 0
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &8502013578077983365
 GameObject:
   m_ObjectHideFlags: 0
