@@ -34,5 +34,9 @@ MonoBehaviour:
   - RespawnSpaceship
   - OnDirectionChange_LEFT
   - OnDirectionChange_RIGHT
+  - changeDirection
+  - destroy
+  - OnTriggerEnter2D
+  - ChangeDirection
   DisableAutoOpenWizard: 1
   ShowSettings: 0

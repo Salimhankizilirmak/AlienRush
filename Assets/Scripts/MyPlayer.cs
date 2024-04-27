@@ -13,7 +13,7 @@ public class MyPlayer : MonoBehaviourPun,IPunObservable {
     public float jumpforce = 800;
 
     private Vector3 smoothMove;
-
+    public float score;
     private GameObject sceneCamera;
     public GameObject playerCamera;
 
@@ -21,9 +21,12 @@ public class MyPlayer : MonoBehaviourPun,IPunObservable {
     public TMP_Text nameText;
     private Rigidbody2D rb;
     private bool IsGrounded;
-    void Start()
-    {
 
+    public GameObject bulletPrefab;
+    public Transform bulletSpawn;
+    public Transform bulletSpawnLeft;
+    void Start()
+    { 
         if (photonView.IsMine)
         {
             nameText.text = PhotonNetwork.NickName;
@@ -47,6 +50,11 @@ public class MyPlayer : MonoBehaviourPun,IPunObservable {
         else {
             smoothMovement();
        }
+       score += 1 * Time.deltaTime;
+    }
+    public void Minus2Points()
+    {
+        score -= 2;
     }
 
     private void smoothMovement()
@@ -74,6 +82,23 @@ public class MyPlayer : MonoBehaviourPun,IPunObservable {
         {
              Jump();
         }
+        if (Input.GetKeyDown(KeyCode.U) && IsGrounded)
+        {
+            Shoot();
+        }
+    }
+    public void Shoot(){
+        GameObject bullet; 
+    if(sr.flipX == true){
+        bullet = PhotonNetwork.Instantiate(bulletPrefab.name, bulletSpawnLeft.position, Quaternion.identity);
+    }else{
+        bullet = PhotonNetwork.Instantiate(bulletPrefab.name, bulletSpawn.position, Quaternion.identity);
+    }
+
+
+       /* if(sr.flipX == true){
+            bullet.GetComponent<PhotonView>().RPC("changeDirection",RpcTarget.AllBuffered);
+        }*/
 
     }
 
@@ -129,4 +154,9 @@ public class MyPlayer : MonoBehaviourPun,IPunObservable {
         }
 
     }
+  /*  public float GetScore()
+    {
+    return score;
+    }*/
+
 }
